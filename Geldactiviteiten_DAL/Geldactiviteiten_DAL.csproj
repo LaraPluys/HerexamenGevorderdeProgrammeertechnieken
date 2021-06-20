@@ -163,6 +163,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\GeldactiviteitEntities.cs" />
+    <Compile Include="Data\Repositories\IRepository.cs" />
+    <Compile Include="Data\Repositories\Repository.cs" />
+    <Compile Include="Data\UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="Data\UnitOfWork\UnitOfWork.cs" />
     <Compile Include="Migrations\202106091235409_InitalCreate.cs" />
     <Compile Include="Migrations\202106091235409_InitalCreate.designer.cs">
       <DependentUpon>202106091235409_InitalCreate.cs</DependentUpon>
@@ -187,6 +191,7 @@
       <DependentUpon>202106091235409_InitalCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
