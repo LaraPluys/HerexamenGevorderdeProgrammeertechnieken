@@ -2,8 +2,33 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:HerexamenGevorderdeProgrammeertechnieken"
+             xmlns:views="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.Views"
+             xmlns:viewmodels="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.ViewModels"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+            <views:HomeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:ActiviteitToevoegenViewModel}">
+            <views:ActiviteitToevoegenView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:BeheerDoelpubliekViewModel}">
+            <views:BeheerDoelpubliekView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:BeheerDoelViewModel}">
+            <views:BeheerDoelView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:BeheerSoortViewModel}">
+            <views:BeheerSoortView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:BeheerTijdstipViewModel}">
+            <views:BeheerTijdstipView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+            <views:LoginView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:MeerInfoViewModel}">
+            <views:MeerInfoView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HerexamenGevorderdeProgrammeertechnieken"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainView" Height="400" Width="1100" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
-        
+
+
+        <ContentControl Content="{Binding SelectedViewModel}"/>
     </Grid>
 </Window>

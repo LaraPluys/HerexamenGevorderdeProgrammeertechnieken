@@ -10,23 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using HerexamenGevorderdeProgrammeertechnieken.ViewModels;
-using HerexamenGevorderdeProgrammeertechnieken.Views;
 
-namespace HerexamenGevorderdeProgrammeertechnieken
+namespace HerexamenGevorderdeProgrammeertechnieken.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MeerInfoView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MeerInfoView : Window
     {
-        public MainWindow()
+        public MeerInfoView()
         {
             InitializeComponent();
-
-            DataContext = new MainViewModel();
         }
     }
 }
