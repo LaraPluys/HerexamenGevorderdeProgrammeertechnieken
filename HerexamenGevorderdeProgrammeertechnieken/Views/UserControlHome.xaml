@@ -5,8 +5,44 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="1100">
+    
     <Grid>
-            
+        <DockPanel>
+            <ToolBarTray DockPanel.Dock="Top" Height="40">
+                <ToolBar>
+                    <Button Content="Nieuwe Activiteit" Command="{Binding}" CommandParameter="NieuweActiviteit"/>
+                    <Separator></Separator>
+                    <Button Content="Edit Activiteit" Command="{Binding}" CommandParameter="EditActiviteit"/>
+                    <Separator></Separator>
+                    <Button Content="Delete Activiteit" Width="100" Command="{Binding}" CommandParameter="DeleteActiviteit"/>
+                    <Separator></Separator>
+                </ToolBar>
+                <ToolBar Margin="-5.6,0,5.6,0">
+                    <Button Content="Beheer Soort" Command="{Binding}" CommandParameter="BeheerSoort"/>
+                    <Separator></Separator>
+                    <Button Content="Beheer Doel" Command="{Binding}" CommandParameter="BeheerDoel"/>
+                    <Separator></Separator>
+                    <Button Content="Beheer Doelpubliek" Command="{Binding}" CommandParameter="BeheerDoelpubliek"/>
+                    <Separator></Separator>
+                    <Button Content="Beheer Tijdstip" Command="{Binding}" CommandParameter="BeheerTijdstip"/>
+                    <Separator></Separator>
+                </ToolBar>
+                <ToolBar Margin="304.4,0,-304.8,0">
+                    <Button x:Name="btnLogin" Content="Inloggen" HorizontalAlignment="Right" Margin="5" Command="{Binding}" CommandParameter="Inloggen"/>
+                </ToolBar>
+            </ToolBarTray>
+
+            <Label Content="Geldactiviteiten" Margin="0,0,0,-19.4" FontSize="16" Background="White"/>
+        </DockPanel>
+
+        <DataGrid x:Name="datagrid" ItemsSource="{Binding}" Margin="10,72,10,10"  DockPanel.Dock="Bottom"  RowHeight="30" SelectionMode="Single" Width="1000" Height="280" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF1C1D1D" HorizontalGridLinesBrush="#FFE2E2E2" VerticalGridLinesBrush="#FFE6E6E6" TextOptions.TextFormattingMode="Display" FontFamily="Verdana" FontSize="11" MinColumnWidth="36" ColumnHeaderHeight="33" RowHeaderWidth="10" IsReadOnly="True">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFDFDFD" Offset="0.728"/>
+                    <GradientStop Color="#FFA9CDD3" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+        </DataGrid>
     </Grid>
 </UserControl>
