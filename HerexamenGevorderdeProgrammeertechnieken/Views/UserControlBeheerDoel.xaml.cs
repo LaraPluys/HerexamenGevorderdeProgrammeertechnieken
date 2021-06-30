@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace HerexamenGevorderdeProgrammeertechnieken.Views
 {
     /// <summary>
-    /// Interaction logic for Home.xaml
+    /// Interaction logic for UserControlBeheerDoel.xaml
     /// </summary>
-    public partial class HomeView : Window
+    public partial class UserControlBeheerDoel : Window
     {
-        public HomeView()
+        public UserControlBeheerDoel()
         {
             InitializeComponent();
         }

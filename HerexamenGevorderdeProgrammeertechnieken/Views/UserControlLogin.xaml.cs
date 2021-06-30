@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace HerexamenGevorderdeProgrammeertechnieken.Views
 {
     /// <summary>
-    /// Interaction logic for ActiviteitToevoegenView.xaml
+    /// Interaction logic for UserControlLogin.xaml
     /// </summary>
-    public partial class ActiviteitToevoegenView : Window
+    public partial class UserControlLogin : Window
     {
-        public ActiviteitToevoegenView()
+        public UserControlLogin()
         {
             InitializeComponent();
         }

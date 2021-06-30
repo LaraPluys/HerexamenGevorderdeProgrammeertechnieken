@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\PropertyChanged.Fody.3.4.0\build\PropertyChanged.Fody.props" Condition="Exists('..\packages\PropertyChanged.Fody.3.4.0\build\PropertyChanged.Fody.props')" />
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -131,6 +132,9 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PropertyChanged, Version=3.4.0.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
+      <HintPath>..\packages\PropertyChanged.Fody.3.4.0\lib\net40\PropertyChanged.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -191,82 +195,83 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\UpdateViewCommand.cs" />
-    <Compile Include="ViewModels\ActiviteitToevoegenViewModel.cs" />
-    <Compile Include="ViewModels\BeheerDoelpubliekViewModel.cs" />
-    <Compile Include="ViewModels\BeheerDoelViewModel.cs" />
-    <Compile Include="ViewModels\BeheerSoortViewModel.cs" />
-    <Compile Include="ViewModels\BeheerTijdstipViewModel.cs" />
-    <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\MeerInfoViewModel.cs" />
-    <Compile Include="Views\ActiviteitToevoegenView.xaml.cs">
-      <DependentUpon>ActiviteitToevoegenView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\BeheerDoelpubliekView.xaml.cs">
-      <DependentUpon>BeheerDoelpubliekView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\BeheerDoelView.xaml.cs">
-      <DependentUpon>BeheerDoelView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\BeheerSoortView.xaml.cs">
-      <DependentUpon>BeheerSoortView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\BeheerTijdstipView.xaml.cs">
-      <DependentUpon>BeheerTijdstipView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\HomeView.xaml.cs">
-      <DependentUpon>HomeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\LoginView.xaml.cs">
-      <DependentUpon>LoginView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MeerInfoView.xaml.cs">
-      <DependentUpon>MeerInfoView.xaml</DependentUpon>
-    </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Compile Include="Navigatie\INavigator.cs" />
+    <Compile Include="Navigatie\Navigator.cs" />
+    <Compile Include="Navigatie\UpdateViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModels\BasisViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\HomeViewModel.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\SecondWindowViewModel.cs" />
+    <Compile Include="ViewModels\UserControlActiviteitToevoegenViewModel.cs" />
+    <Compile Include="ViewModels\UserControlBeheerDoelpubliekViewModel.cs" />
+    <Compile Include="ViewModels\UserControlBeheerDoelViewModel.cs" />
+    <Compile Include="ViewModels\UserControlBeheerSoortViewModel.cs" />
+    <Compile Include="ViewModels\UserControlBeheerTijdstipViewModel.cs" />
+    <Compile Include="ViewModels\UserControlHomeViewModel.cs" />
+    <Compile Include="ViewModels\UserControlLoginViewModel.cs" />
+    <Compile Include="Views\UserControlActiviteitToevoegen.xaml.cs">
+      <DependentUpon>UserControlActiviteitToevoegen.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\ActiviteitToevoegenView.xaml">
+    <Compile Include="Views\UserControlBeheerDoel.xaml.cs">
+      <DependentUpon>UserControlBeheerDoel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControlBeheerDoelpubliek.xaml.cs">
+      <DependentUpon>UserControlBeheerDoelpubliek.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControlBeheerSoort.xaml.cs">
+      <DependentUpon>UserControlBeheerSoort.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControlBeheerTijdstip.xaml.cs">
+      <DependentUpon>UserControlBeheerTijdstip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControlHome.xaml.cs">
+      <DependentUpon>UserControlHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControlLogin.xaml.cs">
+      <DependentUpon>UserControlLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SecondWindow.xaml.cs">
+      <DependentUpon>SecondWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\UserControlActiviteitToevoegen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\BeheerDoelpubliekView.xaml">
+    <Page Include="Views\UserControlBeheerDoel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\BeheerDoelView.xaml">
+    <Page Include="Views\UserControlBeheerDoelpubliek.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\BeheerSoortView.xaml">
+    <Page Include="Views\UserControlBeheerSoort.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\BeheerTijdstipView.xaml">
+    <Page Include="Views\UserControlBeheerTijdstip.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\HomeView.xaml">
+    <Page Include="Views\UserControlHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\LoginView.xaml">
+    <Page Include="Views\UserControlLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MeerInfoView.xaml">
+    <Page Include="Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SecondWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -313,7 +318,10 @@
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.6.5.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.5.1\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\PropertyChanged.Fody.3.4.0\build\PropertyChanged.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PropertyChanged.Fody.3.4.0\build\PropertyChanged.Fody.props'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
+  <Import Project="..\packages\Fody.6.5.1\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.1\build\Fody.targets')" />
 </Project>

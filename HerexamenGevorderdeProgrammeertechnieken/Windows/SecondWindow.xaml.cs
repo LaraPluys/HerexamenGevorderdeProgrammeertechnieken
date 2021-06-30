@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace HerexamenGevorderdeProgrammeertechnieken.Views
+namespace HerexamenGevorderdeProgrammeertechnieken.Windows
 {
     /// <summary>
-    /// Interaction logic for BeheerDoelpubliekView.xaml
+    /// Interaction logic for SecondWindow.xaml
     /// </summary>
-    public partial class BeheerDoelpubliekView : Window
+    public partial class SecondWindow : Window
     {
-        public BeheerDoelpubliekView()
+        public SecondWindow()
         {
             InitializeComponent();
         }

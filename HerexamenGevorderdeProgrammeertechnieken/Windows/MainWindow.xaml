@@ -1,12 +1,12 @@
-﻿<Window x:Class="HerexamenGevorderdeProgrammeertechnieken.Views.BeheerDoelpubliekView"
+﻿<Window x:Class="HerexamenGevorderdeProgrammeertechnieken.Windows.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.Views"
+        xmlns:local="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.Windows"
         mc:Ignorable="d"
-        Title="BeheerDoelpubliekView" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ContentControl Content="{Binding Navigate.CurrentMainViewModel}"></ContentControl>
     </Grid>
 </Window>

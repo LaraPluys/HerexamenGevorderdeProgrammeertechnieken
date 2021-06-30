@@ -10,5 +10,7 @@ namespace Geldactiviteiten_DAL.Models
     {
         public int SoortId { get; set; }
         public string Naam { get; set; }
+
+        
     }
 }

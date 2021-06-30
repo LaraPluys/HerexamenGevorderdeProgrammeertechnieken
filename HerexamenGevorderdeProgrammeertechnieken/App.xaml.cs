@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using HerexamenGevorderdeProgrammeertechnieken.ViewModels;
 using HerexamenGevorderdeProgrammeertechnieken;
+using HerexamenGevorderdeProgrammeertechnieken.Windows;
 
 namespace HerexamenGevorderdeProgrammeertechnieken
 {
@@ -15,12 +16,12 @@ namespace HerexamenGevorderdeProgrammeertechnieken
     /// </summary>
     public partial class App : Application
     {
-        private void Application_Startup(object sender, StartupEventArgs e)
+         protected override void OnStartup(StartupEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            MainViewModel mainViewModel = new MainViewModel();
-            mainWindow.DataContext = mainViewModel;
-            mainWindow.Show();
+            Window MainWindow = new MainWindow();
+            MainWindow.DataContext = new MainWindowViewModel();
+            MainWindow.Show();
+            base.OnStartup(e);
         }
     }
 }

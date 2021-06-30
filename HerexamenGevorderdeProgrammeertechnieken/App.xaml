@@ -2,33 +2,48 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:HerexamenGevorderdeProgrammeertechnieken"
-             xmlns:views="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.Views"
              xmlns:viewmodels="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.ViewModels"
-             StartupUri="MainWindow.xaml">
+             xmlns:views="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.Views"
+             xmlns:windows="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.Windows">
+
     <Application.Resources>
-        <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
-            <views:HomeView/>
+    
+        <DataTemplate DataType="{x:Type viewmodels:MainWindowViewModel}">
+            <windows:MainWindow/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:ActiviteitToevoegenViewModel}">
-            <views:ActiviteitToevoegenView/>
+
+        <DataTemplate DataType="{x:Type viewmodels:SecondWindowViewModel}">
+            <windows:SecondWindow/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:BeheerDoelpubliekViewModel}">
-            <views:BeheerDoelpubliekView/>
+
+        <DataTemplate DataType="{x:Type viewmodels:UserControlHomeViewModel}">
+            <views:UserControlHome/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:BeheerDoelViewModel}">
-            <views:BeheerDoelView/>
+
+        <DataTemplate DataType="{x:Type viewmodels:UserControlActiviteitToevoegenViewModel}">
+            <views:UserControlActiviteitToevoegen/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:BeheerSoortViewModel}">
-            <views:BeheerSoortView/>
+        
+        <DataTemplate DataType="{x:Type viewmodels:UserControlBeheerDoelpubliekViewModel}">
+            <views:UserControlBeheerDoelpubliek/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:BeheerTijdstipViewModel}">
-            <views:BeheerTijdstipView/>
+        
+        <DataTemplate DataType="{x:Type viewmodels:UserControlBeheerDoelViewModel}">
+            <views:UserControlBeheerDoel/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
-            <views:LoginView/>
+        
+        <DataTemplate DataType="{x:Type viewmodels:UserControlBeheerSoortViewModel}">
+            <views:UserControlBeheerSoort/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:MeerInfoViewModel}">
-            <views:MeerInfoView/>
+        
+        <DataTemplate DataType="{x:Type viewmodels:UserControlBeheerTijdstipViewModel}">
+            <views:UserControlBeheerTijdstip/>
         </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type viewmodels:UserControlLoginViewModel}">
+            <views:UserControlLogin/>
+        </DataTemplate>
+        
+        
     </Application.Resources>
 </Application>

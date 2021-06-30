@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace HerexamenGevorderdeProgrammeertechnieken.Views
 {
     /// <summary>
-    /// Interaction logic for BeheerTijdstipView.xaml
+    /// Interaction logic for UserControlHome.xaml
     /// </summary>
-    public partial class BeheerTijdstipView : Window
+    public partial class UserControlHome : Window
     {
-        public BeheerTijdstipView()
+        public UserControlHome()
         {
             InitializeComponent();
         }
