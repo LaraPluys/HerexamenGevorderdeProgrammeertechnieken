@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace HerexamenGevorderdeProgrammeertechnieken.Views
@@ -17,7 +18,7 @@ namespace HerexamenGevorderdeProgrammeertechnieken.Views
     /// <summary>
     /// Interaction logic for UserControlHome.xaml
     /// </summary>
-    public partial class UserControlHome : Window
+    public partial class UserControlHome : UserControl
     {
         public UserControlHome()
         {

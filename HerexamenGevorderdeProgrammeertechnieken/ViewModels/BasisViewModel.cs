@@ -65,11 +65,6 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
         {
             return string.IsNullOrWhiteSpace(Error);
         }
-
-        public static implicit operator BasisViewModel(HomeViewModel v)
-        {
-            throw new NotImplementedException();
-        }
         #endregion
     }
 }

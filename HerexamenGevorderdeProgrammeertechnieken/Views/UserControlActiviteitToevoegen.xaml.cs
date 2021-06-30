@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace HerexamenGevorderdeProgrammeertechnieken.Views
@@ -17,7 +18,7 @@ namespace HerexamenGevorderdeProgrammeertechnieken.Views
     /// <summary>
     /// Interaction logic for UserControlActiviteitToevoegen.xaml
     /// </summary>
-    public partial class UserControlActiviteitToevoegen : Window
+    public partial class UserControlActiviteitToevoegen : UserControl
     {
         public UserControlActiviteitToevoegen()
         {
