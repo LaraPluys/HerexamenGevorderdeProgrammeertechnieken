@@ -14,12 +14,25 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
 
         public override bool CanExecute(object parameter)
         {
-            throw new NotImplementedException();
+            switch (parameter)
+            {
+                default:
+                    return false;
+                case "Toevoegen":
+                    return true;
+
+            }
         }
 
         public override void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            switch (parameter)
+            {
+                case "Toevoegen":
+
+                    break;
+
+            }
         }
     }
 }

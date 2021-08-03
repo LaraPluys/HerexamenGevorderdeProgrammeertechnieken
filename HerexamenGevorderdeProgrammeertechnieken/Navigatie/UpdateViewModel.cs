@@ -58,19 +58,19 @@ namespace HerexamenGevorderdeProgrammeertechnieken.Navigatie
 
                 //voor second window
                 case "UserControlBeheerDoelpubliek":
-                    Navigate.CurrentMainViewModel = new UserControlBeheerDoelpubliekViewModel();
+                    Navigate.CurrentSecondViewModel = new UserControlBeheerDoelpubliekViewModel();
                     break;
                 case "UserControlBeheerDoel":
-                    Navigate.CurrentMainViewModel = new UserControlBeheerDoelViewModel();
+                    Navigate.CurrentSecondViewModel = new UserControlBeheerDoelViewModel();
                     break;
                 case "UserControlBeheerSoort":
-                    Navigate.CurrentMainViewModel = new UserControlBeheerSoortViewModel();
+                    Navigate.CurrentSecondViewModel = new UserControlBeheerSoortViewModel();
                     break;
                 case "UserControlBeheerTijdstip":
-                    Navigate.CurrentMainViewModel = new UserControlBeheerTijdstipViewModel();
+                    Navigate.CurrentSecondViewModel = new UserControlBeheerTijdstipViewModel();
                     break;
                 case "UserControlLogin":
-                    Navigate.CurrentMainViewModel = new UserControlLoginViewModel();
+                    Navigate.CurrentSecondViewModel = new UserControlLoginViewModel();
                     break;
 
             }
