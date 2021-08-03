@@ -5,8 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="300" d:DesignWidth="300" Background="White">
     <Grid>
-            
+        <Label Content="Gebruikersnaam: " Grid.Row="0" Grid.Column="0" Margin="0,24,202,240" />
+        <TextBox x:Name="txtGebruikersnaam" Grid.Row="0" Margin="103,24,10,240" />
+        <Label Content="Wachtwoord: " Grid.Column="0" Margin="10,83,202,194" />
+        <TextBox x:Name="txtWachtwoord" Height="35" Margin="103,0,10,182" VerticalAlignment="Bottom" />
+        <Button Command="{Binding}" CommandParameter="Login" Content="Login" FontWeight="Bold" Margin="121,229,10,32"/>
+
     </Grid>
 </UserControl>

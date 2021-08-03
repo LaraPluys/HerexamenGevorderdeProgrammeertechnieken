@@ -56,6 +56,8 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
                 case "DeleteActiviteit":
 
                     break;
+
+
                 case "BeheerSoort":
                     SWS.OpenWindow("UserControlBeheerSoort");
                     break;
