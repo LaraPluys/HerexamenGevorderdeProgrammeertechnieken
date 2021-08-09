@@ -29,10 +29,12 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
             switch (parameter)
             {
                 case "Toevoegen":
-
+                    Toevoegen();
                     break;
 
             }
         }
+
+        public void Toevoegen() { }
     }
 }

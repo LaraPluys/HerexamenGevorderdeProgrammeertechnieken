@@ -1,4 +1,6 @@
-﻿using HerexamenGevorderdeProgrammeertechnieken.Navigatie;
+﻿using Geldactiviteiten_DAL.Data;
+using Geldactiviteiten_DAL.Data.UnitOfWork;
+using HerexamenGevorderdeProgrammeertechnieken.Navigatie;
 using HerexamenGevorderdeProgrammeertechnieken.Services;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,9 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
         public ICommand SetViewModel => UpdateViewModel.Navigate.SetViewModel;
         public override string this[string columnName] => throw new NotImplementedException();
 
+        IUnitOfWork unitOfWork = new UnitOfWork(new GeldactiviteitEntities());
+
+
         private SecondWindowService SWS = new SecondWindowService();
 
         public override bool CanExecute(object parameter)
@@ -29,7 +34,6 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
                     return true;
                 case "Opslaan&Nieuw":
                     return true;
-
             }
         }
 
@@ -38,16 +42,36 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
             switch (parameter)
             {
                 case "Reset":
-
+                    Reset();
                     break;
                 case "OpslaanSluiten":
-
+                    OpslaanSluiten();
                     break;
                 case "OpslaanNieuw":
-
+                    OpslaanNieuw();
                     break;
 
             }
         }
+
+        public void Reset()
+        {
+
+        }
+
+        public void OpslaanSluiten()
+        {
+
+
+
+            SWS.CloseWindow();
+        }
+
+        public void OpslaanNieuw()
+        {
+            
+        }
+
+         
     }
 }

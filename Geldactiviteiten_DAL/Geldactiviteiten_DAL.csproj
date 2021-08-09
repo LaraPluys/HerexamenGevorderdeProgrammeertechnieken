@@ -189,6 +189,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Doel.cs" />
     <Compile Include="Models\Doelpubliek.cs" />
+    <Compile Include="Models\DomainObject.cs" />
     <Compile Include="Models\Geldactiviteit.cs" />
     <Compile Include="Models\Geldactiviteit_Doel.cs" />
     <Compile Include="Models\Geldactiviteit_Doelpubliek.cs" />

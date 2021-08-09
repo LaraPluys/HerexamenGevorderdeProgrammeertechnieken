@@ -15,7 +15,7 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
         {
             Navigate.SetViewModel.Execute("UserControlHome");
         }
-
+         
         public override string this[string columnName] => throw new NotImplementedException();
 
         public override bool CanExecute(object parameter)
