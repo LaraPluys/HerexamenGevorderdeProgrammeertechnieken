@@ -1,9 +1,12 @@
 ﻿using Geldactiviteiten_DAL.Data;
 using Geldactiviteiten_DAL.Data.UnitOfWork;
+using Geldactiviteiten_DAL.Models;
+using Geldactiviteiten_DAL.BasisModel;
 using HerexamenGevorderdeProgrammeertechnieken.Navigatie;
 using HerexamenGevorderdeProgrammeertechnieken.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +21,10 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
         public override string this[string columnName] => throw new NotImplementedException();
 
         IUnitOfWork unitOfWork = new UnitOfWork(new GeldactiviteitEntities());
-
+        public Geldactiviteit GeldactiviteitRecord { get; set; }
+        public string Foutmelding { get; set; }
+        public string GeldactiviteitId { get; set; }
+        public ObservableCollection<Geldactiviteit> Geldactiviteiten { get; set; }
 
         private SecondWindowService SWS = new SecondWindowService();
 
@@ -56,20 +62,45 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
 
         public void Reset()
         {
-
+            
         }
 
         public void OpslaanSluiten()
         {
-
-
-
+            if (this.IsGeldig())
+            {
+                GeldactiviteitRecord.GeldactiviteitId = int.Parse(GeldactiviteitId);
+                if (GeldactiviteitRecord.IsGeldig())
+                {
+                    unitOfWork.GeldactiviteitRepo.Toevoegen(GeldactiviteitRecord);
+                    int ok = unitOfWork.Save();
+                }
+                else
+                {
+                    Foutmelding = "Geldaciviteit is niet toegevoegd";
+                }
+            }
+            
             SWS.CloseWindow();
         }
 
         public void OpslaanNieuw()
         {
-            
+            if (this.IsGeldig())
+            {
+                GeldactiviteitRecord.GeldactiviteitId = int.Parse(GeldactiviteitId);
+                if (GeldactiviteitRecord.IsGeldig())
+                {
+                    unitOfWork.GeldactiviteitRepo.Toevoegen(GeldactiviteitRecord);
+                    int ok = unitOfWork.Save();
+                }
+                else
+                {
+                    Foutmelding = "Geldaciviteit is niet toegevoegd";
+                }
+            }
+
+            Reset();
         }
 
          

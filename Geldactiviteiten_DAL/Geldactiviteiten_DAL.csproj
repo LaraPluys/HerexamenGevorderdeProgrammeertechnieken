@@ -177,6 +177,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasisModel\Basisklasse.cs" />
     <Compile Include="Data\GeldactiviteitEntities.cs" />
     <Compile Include="Data\Repositories\IRepository.cs" />
     <Compile Include="Data\Repositories\Repository.cs" />
@@ -185,6 +186,14 @@
     <Compile Include="Migrations\202106091235409_InitalCreate.cs" />
     <Compile Include="Migrations\202106091235409_InitalCreate.designer.cs">
       <DependentUpon>202106091235409_InitalCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108101744290_UpdatedModels.cs" />
+    <Compile Include="Migrations\202108101744290_UpdatedModels.designer.cs">
+      <DependentUpon>202108101744290_UpdatedModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108101750376_UpdatedModels2.cs" />
+    <Compile Include="Migrations\202108101750376_UpdatedModels2.designer.cs">
+      <DependentUpon>202108101750376_UpdatedModels2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Doel.cs" />
@@ -196,6 +205,7 @@
     <Compile Include="Models\Geldactiviteit_Tijdstip.cs" />
     <Compile Include="Models\Soort.cs" />
     <Compile Include="Models\Tijdstip.cs" />
+    <Compile Include="partials\Geldactiviteit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +215,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106091235409_InitalCreate.resx">
       <DependentUpon>202106091235409_InitalCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108101744290_UpdatedModels.resx">
+      <DependentUpon>202108101744290_UpdatedModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108101750376_UpdatedModels2.resx">
+      <DependentUpon>202108101750376_UpdatedModels2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
