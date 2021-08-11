@@ -4,13 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.Views"
+             xmlns:components="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.Components;assembly=BindablePasswordBox"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Background="White">
     <Grid>
         <Label Content="Gebruikersnaam: " Grid.Row="0" Grid.Column="0" Margin="5,24,193,240" />
-        <TextBox x:Name="txtGebruikersnaam" Grid.Row="0" Margin="112,24,10,240" />
+        <TextBox x:Name="txtGebruikersnaam" Grid.Row="0" Margin="112,24,10,240" Text="{Binding Username}" />
         <Label Content="Wachtwoord: " Grid.Column="0" Margin="5,83,207,194" />
-        <TextBox x:Name="txtWachtwoord" Height="35" Margin="112,0,10,182" VerticalAlignment="Bottom" />
+        <TextBox x:Name="txtWachtwoord" Height="35" Margin="112,0,10,182" VerticalAlignment="Bottom" Password="{Binding Password}"/>
         <Button Command="{Binding}" CommandParameter="Login" Content="Login" FontWeight="Bold" Margin="121,229,10,32"/>
 
     </Grid>
