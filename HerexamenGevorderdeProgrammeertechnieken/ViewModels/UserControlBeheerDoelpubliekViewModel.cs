@@ -1,6 +1,10 @@
-﻿using HerexamenGevorderdeProgrammeertechnieken.Navigatie;
+﻿using Geldactiviteiten_DAL.Data;
+using Geldactiviteiten_DAL.Data.UnitOfWork;
+using Geldactiviteiten_DAL.Models;
+using HerexamenGevorderdeProgrammeertechnieken.Navigatie;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +17,22 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
         public INavigator Navigate => UpdateViewModel.Navigate;
         public ICommand SetViewModel => UpdateViewModel.Navigate.SetViewModel;
 
+        public ObservableCollection<Doelpubliek> DoelPubliekItem { get; set; }
+        public string DoelPubliekNaam { get; set; }
+
+        IUnitOfWork unitOfWork = new UnitOfWork(new GeldactiviteitEntities());
+
         public override string this[string columnName] => throw new NotImplementedException();
+
+        public UserControlBeheerDoelpubliekViewModel()
+        {
+            LoadDoelPubliek();
+        }
+
+        public void LoadDoelPubliek()
+        {
+            DoelPubliekItem = new ObservableCollection<Doelpubliek>(unitOfWork.DoelpubliekRepo.Ophalen());
+        }
 
         public override bool CanExecute(object parameter)
         {
@@ -23,7 +42,7 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
                     return false;
                 case "Toevoegen":
                     return true;
-                
+
             }
         }
 
@@ -37,7 +56,14 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
 
             }
         }
-        
-        public void Toevoegen() { }
+
+        public void Toevoegen()
+        {
+            Doelpubliek doelpubliek = new Doelpubliek();
+            doelpubliek.Naam = DoelPubliekNaam;
+            unitOfWork.DoelpubliekRepo.Toevoegen(doelpubliek);
+            LoadDoelPubliek();
+            DoelPubliekNaam = "";
+        }
     }
 }

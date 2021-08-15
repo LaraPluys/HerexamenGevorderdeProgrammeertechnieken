@@ -37,5 +37,10 @@
         <Button x:Name="reset"  Command="{Binding}" CommandParameter="Reset" Content="reset" HorizontalAlignment="Left" Margin="434,376,0,0" VerticalAlignment="Top" Width="49"/>
         <Button x:Name="opslaanNieuw"  Command="{Binding}" CommandParameter="OpslaanNieuw" Content="Opslaan &amp; Nieuw" HorizontalAlignment="Left" Margin="503,376,0,0" VerticalAlignment="Top" Width="102"/>
         <Button x:Name="opslaanSluiten" Content="Opslaan &amp; Sluiten"  Command="{Binding}" CommandParameter="OpslaanSluiten" HorizontalAlignment="Left" Margin="626,376,0,0" VerticalAlignment="Top" Width="100"/>
+
+        <ListBox x:Name="soortList" HorizontalAlignment="Left" Height="79" Margin="287,49,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="0.469,-0.872" ItemsSource="{Binding Path=SoortItem}" DisplayMemberPath="Naam" SelectedValuePath="{Binding Path=SoortItem.SoortId}" SelectedItem="{Binding SoortIds}" SelectionChanged="soortList_SelectionChanged"/>
+        <ListBox x:Name="doelList" HorizontalAlignment="Left" Height="79" Margin="137,49,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="0.469,-0.872" ItemsSource="{Binding Path=DoelItem}" DisplayMemberPath="Naam" SelectedValuePath="{Binding DoelId}" SelectionMode="Multiple" SelectionChanged="doelList_SelectionChanged"/>
+        <ListBox x:Name="doelpubliekList" HorizontalAlignment="Left" Height="79" Margin="589,49,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="0.469,-0.872" ItemsSource="{Binding Path=DoelpubliekItem}" DisplayMemberPath="Naam" SelectedValuePath="{Binding DoelpubliekId}" SelectionMode="Multiple" SelectionChanged="doelpubliekList_SelectionChanged"/>
+        <ListBox x:Name="TijdstipList" HorizontalAlignment="Left" Height="79" Margin="434,51,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="0.469,-0.872" ItemsSource="{Binding Path=TijdstipItem}" DisplayMemberPath="Naam" SelectedValuePath="{Binding TijdstipId}" SelectionMode="Multiple" SelectionChanged="TijdstipList_SelectionChanged"/>
     </Grid>
 </UserControl>

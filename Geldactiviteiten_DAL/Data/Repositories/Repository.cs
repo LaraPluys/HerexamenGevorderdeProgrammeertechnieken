@@ -20,11 +20,14 @@ namespace Geldactiviteiten_DAL.Data.Repositories
         }
         public IEnumerable<T> Ophalen()
         {
-            return Context.Set<T>().ToList();
+            var ent = Context.Set<T>();
+            return ent.ToList(); ;
         }
         public void Toevoegen(T entity)
         {
-            Context.Set<T>().Add(entity);
+            var ent = Context.Set<T>();
+            ent.Add(entity);
+            Context.SaveChanges();
         }
         public void Aanpassen(T entity)
         {
@@ -38,7 +41,7 @@ namespace Geldactiviteiten_DAL.Data.Repositories
 
         //uitbreiding
 
-        public IEnumerable<T> Ophalen(Expression<Func<T, bool>> voorwaarden,
+        public ICollection<T> Ophalen(Expression<Func<T, bool>> voorwaarden,
            params Expression<Func<T, object>>[] includes)
         {
             IQueryable<T> query = Context.Set<T>();
@@ -55,18 +58,15 @@ namespace Geldactiviteiten_DAL.Data.Repositories
             }
             return query.ToList();
         }
-        public IEnumerable<T> Ophalen(Expression<Func<T, bool>> voorwaarden)
+        public ICollection<T> Ophalen(Expression<Func<T, bool>> voorwaarden)
         {
             return Ophalen(voorwaarden, null).ToList();
         }
 
-        public IEnumerable<T> Ophalen(params Expression<Func<T, object>>[] includes)
+        public ICollection<T> Ophalen(params Expression<Func<T, object>>[] includes)
         {
             return Ophalen(null, includes).ToList();
         }
-
-
-
 
 
         //handige functies

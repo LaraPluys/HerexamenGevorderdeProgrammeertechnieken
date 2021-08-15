@@ -24,8 +24,10 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
         IUnitOfWork unitOfWork = new UnitOfWork(new GeldactiviteitEntities());
         public Geldactiviteit GeldactiviteitRecord { get; set; }
         public string Foutmelding { get; set; }
-        public string GeldactiviteitId { get; set; }
+        public string GeldactiviteitID { get; set; }
         public ObservableCollection<Geldactiviteit> Geldactiviteiten { get; set; }
+        public ObservableCollection<Soort> Soorten { get; set; }
+        public ObservableCollection<GeldactivietenSoorten> GeldList { get; set; }
 
         //geselecteerde geldactiviteit uit datagrid
         private Geldactiviteit _selectedGeldactiviteit;
@@ -36,16 +38,37 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
             {
                 _selectedGeldactiviteit = value;
                 GeldactiviteitRecordInstellen();
-                //NotifyPropertyChanged("SelectedGeldactiviteit");
-                //NotifyPropertyChanged(); //omdat er gewerkt wordt met nuget package Propertychanged.Fody hoeft dit niet meer
-
             }
         }
 
         public UserControlHomeViewModel()
         {
-            Geldactiviteiten = new ObservableCollection<Geldactiviteit>(unitOfWork.GeldactiviteitRepo.Ophalen(x => x.GeldactiviteitId));
-            GeldactiviteitRecordInstellen();
+            Geldactiviteiten = new ObservableCollection<Geldactiviteit>(unitOfWork.GeldactiviteitRepo.Ophalen());
+            Soorten = new ObservableCollection<Soort>();
+        }
+
+        public List<GeldactivietenSoorten> getActiviteiten()
+        {
+            var data = unitOfWork.GeldactiviteitRepo.Ophalen().Join(unitOfWork.SoortRepo.Ophalen(), ga => ga.SoortId, so => so.SoortId, (ga, so) => new
+            {
+                Id = ga.GeldactiviteitId,
+                Naam = ga.Naam,
+                Beschrijving = ga.Omschrijving,
+                ToDo = ga.ToDo,
+                Soort = so.Naam,
+                Wanneer = ga.Wanneer,
+                Kosten = ga.Kosten,
+                Inkomsten = ga.Inkomsten
+            }).ToList();
+
+            List<GeldactivietenSoorten> GeldList = new List<GeldactivietenSoorten>();
+
+            foreach (var d in data)
+            {
+                GeldList.Add(new GeldactivietenSoorten { Id = d.Id.ToString(), Naam = d.Naam, Beschrijving = d.Beschrijving, ToDo = d.ToDo, Soort = d.Soort, Kosten = d.Kosten, Inkomsten = d.Inkomsten, Wanneer = d.Wanneer });
+            }
+
+            return GeldList;
         }
 
         public void EditActiviteit()
@@ -69,7 +92,7 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
 
         private void RefreshGeldactiviteiten()
         {
-            int i = int.Parse(GeldactiviteitId);
+            int i = int.Parse(GeldactiviteitID);
             List<Geldactiviteit> listGeldactiviteiten = unitOfWork.GeldactiviteitRepo.Ophalen(x => x.GeldactiviteitId == i).ToList();
 
             Geldactiviteiten = new ObservableCollection<Geldactiviteit>(listGeldactiviteiten);
@@ -109,13 +132,13 @@ namespace HerexamenGevorderdeProgrammeertechnieken.ViewModels
                 
                 unitOfWork.GeldactiviteitRepo.Verwijderen(SelectedGeldactiviteit.GeldactiviteitId);
                 int ok = unitOfWork.Save();
-                FoutmeldingInstellenNaSave(ok, "Orderlijn is niet verwijderd");
+                FoutmeldingInstellenNaSave(ok, "activiteit is niet verwijderd");
 
                
             }
             else
             {
-                Foutmelding = "Eerst Orderlijn selecteren";
+                Foutmelding = "Eerst acitiviteit selecteren";
             }
         }
 

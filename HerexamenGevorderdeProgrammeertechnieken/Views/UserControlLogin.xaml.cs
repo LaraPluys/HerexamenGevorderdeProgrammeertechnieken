@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HerexamenGevorderdeProgrammeertechnieken.Components;
 
 namespace HerexamenGevorderdeProgrammeertechnieken.Views
 {
@@ -24,6 +25,8 @@ namespace HerexamenGevorderdeProgrammeertechnieken.Views
         public UserControlLogin()
         {
             InitializeComponent();
+            HerexamenGevorderdeProgrammeertechnieken.Components.BindablePasswordBox bpb = new BindablePasswordBox();
+            this.gridLogin.Children.Add(bpb);
         }
     }
 }

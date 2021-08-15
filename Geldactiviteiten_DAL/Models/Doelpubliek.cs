@@ -11,6 +11,6 @@ namespace Geldactiviteiten_DAL.Models
         public int DoelpubliekId { get; set; }
 
         public string Naam { get; set; }
-        public ICollection<Geldactiviteit_Doelpubliek> Geldactiviteit_Doelpublieken { get; set; }
+        public virtual ICollection<Geldactiviteit_Doelpubliek> Geldactiviteit_Doelpublieken { get; set; }
     }
 }

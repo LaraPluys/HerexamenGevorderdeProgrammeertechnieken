@@ -17,9 +17,9 @@ namespace Geldactiviteiten_DAL.Data.Repositories
 
 
         //uitbreiding
-        IEnumerable<T> Ophalen(Expression<Func<T, bool>> voorwaarden);
-        IEnumerable<T> Ophalen(params Expression<Func<T, object>>[] includes);
-        IEnumerable<T> Ophalen(Expression<Func<T, bool>> voorwaarden,
+        ICollection<T> Ophalen(Expression<Func<T, bool>> voorwaarden);
+        ICollection<T> Ophalen(params Expression<Func<T, object>>[] includes);
+        ICollection<T> Ophalen(Expression<Func<T, bool>> voorwaarden,
             params Expression<Func<T, object>>[] includes);
 
 

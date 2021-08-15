@@ -10,7 +10,5 @@ namespace Geldactiviteiten_DAL.Models
     {
         public int DoelId { get; set; }
         public string Naam { get; set; }
-
-        public ICollection<Geldactiviteit_Doel> Geldactiviteit_Doelen { get; set; }
     }
 }

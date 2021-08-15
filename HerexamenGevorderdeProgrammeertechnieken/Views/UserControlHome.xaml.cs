@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HerexamenGevorderdeProgrammeertechnieken.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,15 @@ namespace HerexamenGevorderdeProgrammeertechnieken.Views
     /// </summary>
     public partial class UserControlHome : UserControl
     {
+        private UserControlHomeViewModel controlHomeViewModel;
+
         public UserControlHome()
         {
             InitializeComponent();
+            controlHomeViewModel = new UserControlHomeViewModel();
+            base.DataContext = controlHomeViewModel;
+            datagrid.DataContext = controlHomeViewModel.getActiviteiten();
+            datagrid.SelectedValuePath = "Id";
         }
     }
 }

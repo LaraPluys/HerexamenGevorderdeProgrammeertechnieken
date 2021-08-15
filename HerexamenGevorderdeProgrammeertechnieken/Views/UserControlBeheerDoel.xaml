@@ -8,8 +8,12 @@
              d:DesignHeight="300" d:DesignWidth="300" Background="White">
     <Grid>
         <Label Content="Naam" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="74"/>
-        <TextBox x:Name="txtNaam" HorizontalAlignment="Left" Height="23" Margin="101,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154"/>
+        <TextBox x:Name="txtNaam" HorizontalAlignment="Left" Height="23" Margin="101,35,0,0" TextWrapping="Wrap" Text="{Binding DoelNaam, Mode=TwoWay}" VerticalAlignment="Top" Width="154"/>
         <Button Command="{Binding}" CommandParameter="Toevoegen" Content="Voeg toe" HorizontalAlignment="Left" Margin="205,73,0,0" VerticalAlignment="Top" Width="50" FontWeight="Bold" FontFamily="Calibri"/>
-        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="120" ItemsSource="{Binding}" Margin="19,112,0,0" VerticalAlignment="Top" Width="255"/>
+        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="120" ItemsSource="{Binding DoelItem}" Margin="19,112,0,0" VerticalAlignment="Top" Width="255">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Doel Naam" Width="300" Binding="{ Binding Naam}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

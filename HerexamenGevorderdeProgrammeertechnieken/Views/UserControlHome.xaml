@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HerexamenGevorderdeProgrammeertechnieken.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="1100">
+             d:DesignHeight="600" d:DesignWidth="1300">
     
     <Grid>
         <DockPanel>
@@ -36,7 +36,8 @@
             <Label Content="Geldactiviteiten" Margin="0,0,0,-19.4" FontSize="16" Background="White"/>
         </DockPanel>
 
-        <DataGrid x:Name="datagrid" ItemsSource="{Binding}" Margin="10,72,10,10"  DockPanel.Dock="Bottom"  RowHeight="30" SelectionMode="Single" Width="1000" Height="280" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF1C1D1D" HorizontalGridLinesBrush="#FFE2E2E2" VerticalGridLinesBrush="#FFE6E6E6" TextOptions.TextFormattingMode="Display" FontFamily="Verdana" FontSize="11" MinColumnWidth="36" ColumnHeaderHeight="33" RowHeaderWidth="10" IsReadOnly="True">
+        <DataGrid x:Name="datagrid" ItemsSource="{Binding }" Margin="10,97,10,48"  DockPanel.Dock="Bottom"  RowHeight="30" SelectionMode="Single" Width="1280" Height="455" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#FF1C1D1D" HorizontalGridLinesBrush="#FFE2E2E2" VerticalGridLinesBrush="#FFE6E6E6" TextOptions.TextFormattingMode="Display" FontFamily="Verdana" FontSize="11" MinColumnWidth="36" ColumnHeaderHeight="33" RowHeaderWidth="10" IsReadOnly="True">
+
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="#FFFDFDFD" Offset="0.728"/>

@@ -207,6 +207,7 @@
     </Compile>
     <Compile Include="Services\SecondWindowService.cs" />
     <Compile Include="ViewModels\BasisViewModel.cs" />
+    <Compile Include="ViewModels\GeldactiviteitSoorten.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\SecondWindowViewModel.cs" />
     <Compile Include="ViewModels\UserControlActiviteitToevoegenViewModel.cs" />

@@ -10,7 +10,5 @@ namespace Geldactiviteiten_DAL.Models
     {
         public int TijdstipId { get; set; }
         public string Naam { get; set; }
-
-        public ICollection<Geldactiviteit_Tijdstip> Geldactiviteit_Tijdstippen { get; set; }
     }
 }

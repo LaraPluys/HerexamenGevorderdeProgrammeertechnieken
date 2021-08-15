@@ -9,9 +9,13 @@ namespace Geldactiviteiten_DAL.Models
    public class Geldactiviteit_Doelpubliek
     {
         public int Geldactiviteit_DoelpubliekId { get; set; }
-        public Doelpubliek Doelpubliek { get; set; }
+
         public int DoelpubliekId { get; set; }
-        public Geldactiviteit Geldactiviteit { get; set; }
+
         public int GeldactiviteitId { get; set; }
+
+        public virtual Doelpubliek Doelpubliek { get; set; }
+
+        public virtual Geldactiviteit Geldactiviteit { get; set; }
     }
 }

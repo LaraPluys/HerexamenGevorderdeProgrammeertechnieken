@@ -24,5 +24,10 @@ namespace Geldactiviteiten_DAL.Data
         public DbSet<Tijdstip> Tijdstippen { get; set; }
         public DbSet<Geldactiviteit_Tijdstip> Geldactiviteit_Tijdstippen { get; set; }
         public DbSet<Soort> Soorten { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
